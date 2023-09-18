@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <title>Información del Clima</title>
+    <style>
+        .clima-container {
+            background-color: rgba(0, 247, 255, 0.7); /* Fondo azul con transparencia */
+            border-radius: 10px; /* Bordes redondeados */
+            padding: 20px;
+            margin: 10px;
+            /*display: inline-block;
+            width: 45%;*/
+            flex:1;
+        }
+        .contenedor-principal {
+            display: flex; /* Los divs estarán uno al lado del otro */
+            position: relative;
+        }
+        #map{           
+            border-radius: 10px; /* Bordes redondeados */
+            padding: 20px;
+            position: fixed; /* Posición fija para ocupar toda la pantalla */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1; /* Colocar el contenedor detrás de los otros elementos */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <input type="text" id="city-input" placeholder="Ingrese una ciudad" />
+        <button id="get-weather-button">Obtener Clima</button>
+    </header>
+    <div class="contenedor-principal">
+        <div class="clima-container" id="weather-container">
+            <h2>Información del Clima</h2> 
+            <div id="weather-info"></div>       
+        </div>
+        <div class="clima-container" id="tempo-container">
+            <h2>Termómetro</h2>            
+            <div id="tempo-info"></div>
+        </div>
+    </div>
+    <div id="map"></div>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
